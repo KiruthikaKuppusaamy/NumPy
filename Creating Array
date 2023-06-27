@@ -1,0 +1,24 @@
+# 1. Creating array with Python list
+import numpy as np 
+
+# list using variable 
+mble_mfr = ['Apple','Samsung','Nokia','Sony']
+mble_array = np.array(mble_mfr)
+
+print("List using variable: ", mble_mfr)
+print("Array            :",mble_array)
+
+# list as an array argument 
+smart_phone = np.array(['Apple iPhone', 'Blackberry', 'Google Android phones'])
+print("List as an argument:",smart_phone)
+
+
+____________________________________________________________________________________
+output
+List using variable:  ['Apple', 'Samsung', 'Nokia', 'Sony']
+Array            : ['Apple' 'Samsung' 'Nokia' 'Sony']
+List as an argument: ['Apple iPhone' 'Blackberry' 'Google Android phones']
+____________________________________________________________________________________
+
+
+# 2. Creating array with Python list
