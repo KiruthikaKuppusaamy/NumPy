@@ -1,1 +1,107 @@
+# 1. Check Data Type
+import numpy as np
 
+int_type = np.array([-3, -1, 0, 1])
+float_type = np.array([0.1, 0.2, 0.3])
+complex_type = np.array([1+2j, 2+3j, 3+4j])
+
+print("Data type of ",int_type, "         is ", int_type.dtype)
+print("Data type of ",float_type, "         is ", float_type.dtype)  
+print("Data type of ",complex_type, "is ", complex_type.dtype)  
+
+__________________________________________________________________
+outout
+Data type of  [-3 -1  0  1]          is  int64
+Data type of  [0.1 0.2 0.3]          is  float64
+Data type of  [1.+2.j 2.+3.j 3.+4.j] is  complex128
+__________________________________________________________________
+
+
+# 2. Creating Arrays with defined data type
+import numpy as np
+
+int_type = np.array([-3, -1, 0, 1])
+def_int_type = np.array([-3, -1, 0, 1], dtype = 'int32')
+uint_type = np.array([-3, -1, 0, 1], dtype = 'uint8')
+fint_type = np.array([-3, -1, 0, 1], dtype = 'float32')
+cint_type = np.array([-3, -1, 0, 1], dtype = 'complex64')
+
+
+print("Data type of ",int_type, "---------------------", int_type.dtype)
+print("Data type of ",def_int_type, "---------------------", def_int_type.dtype)
+print("Data type of ",uint_type, "-----------------", uint_type.dtype)
+print("Data type of ",fint_type, "-----------------", fint_type.dtype)
+print("Data type of ",cint_type, "-", cint_type.dtype)
+
+__________________________________________________________________
+outout
+Data type of  [-3 -1  0  1] --------------------- int64
+Data type of  [-3 -1  0  1] --------------------- int32
+Data type of  [253 255   0   1] ----------------- uint8
+Data type of  [-3. -1.  0.  1.] ----------------- float32
+Data type of  [-3.+0.j -1.+0.j  0.+0.j  1.+0.j] - complex64
+__________________________________________________________________
+
+
+# 3. Converting Data Type on Existing Arrays
+
+# converting string to integer
+
+import numpy as np
+arr = np.array(['a', '3', '5'])
+int_arr = arr.astype('int')
+print(int_arr, int_arr.dtype)
+
+__________________________________________________________________
+outout
+Traceback (most recent call last):
+  File "/home/main.py", line 7, in <module>
+    int_arr = arr.astype('int')
+ValueError: invalid literal for int() with base 10: 'a'
+__________________________________________________________________
+
+
+# converting string to integer
+
+import numpy as np
+arr = np.array(['1', '3', '5'])
+int_arr = arr.astype('int')
+print("Given data     --" ,arr,"  Data type \t      -- ", arr.dtype)
+print("Converted data --",int_arr,"\t  Converted Data type -- ", int_arr.dtype)
+
+__________________________________________________________________
+outout
+Given data     -- ['1' '3' '5']   Data type           --  <U1
+Converted data -- [1 3 5]         Converted Data type --  int64
+__________________________________________________________________
+
+
+
+# converting float to integer
+
+import numpy as np
+f_arr = np.array([1.3, 3.7, 5.2])
+i_arr = f_arr.astype('i')
+print("Given data     --" ,f_arr,"  Data type \t      -- ", f_arr.dtype)
+print("Converted data --",i_arr,"\t  Converted Data type -- ", i_arr.dtype)
+
+__________________________________________________________________
+outout
+Given data     -- [1.3 3.7 5.2]   Data type           --  float64
+Converted data -- [1 3 5]         Converted Data type --  int32
+__________________________________________________________________
+
+
+# converting integer to boolean
+
+import numpy as np
+i_arr = np.array([1, 3, 0, 2])
+b_arr = i_arr.astype(bool)
+print("Given data     --" ,i_arr,"\t\t     Data type \t\t --", i_arr.dtype)
+print("Converted data --",b_arr," Converted Data type -- ", b_arr.dtype)
+
+__________________________________________________________________
+outout
+Given data     -- [1 3 0 2]                  Data type           -- int64
+Converted data -- [ True  True False  True]  Converted Data type --  bool
+__________________________________________________________________
